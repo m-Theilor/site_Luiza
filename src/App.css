@@ -1,0 +1,212 @@
+/* Estilo global */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+  width: 100%; /* Certifica-se de que o corpo ocupa 100% da largura */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #09122C, #5a484c);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+  width: 100%; /* Certifica-se de que o corpo ocupa 100% da largura */
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffe4e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: #e63946;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box; /* Certifica-se de que padding seja incluído */
+  overflow-x: hidden; /* Impede conteúdo extra de transbordar */
+}
+
+/* Container principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh; /* O container principal ocupa toda a altura da tela */
+  box-sizing: border-box; /* Considera paddings e bordas no cálculo de tamanho */
+  max-height: 100vh; /* Garante que não ultrapasse a largura da janela */
+}
+
+/* Layout da seção principal */
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Texto */
+.text-container {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e9e9e9;
+  height: 78vh;
+  overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+}
+
+/* Carrossel */
+.carousel-container {
+  width: 50%;
+  max-width: 550px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Rodapé */
+footer {
+  display: flex;
+  flex-wrap: nowrap; /* Mantém os elementos na mesma linha */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000; /* Fundo preto */
+  color: white; /* Texto branco */
+  gap: 20px; /* Espaçamento entre seções */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra no topo do footer */
+  width: 100%; /* O footer ocupa toda a largura */
+  position: relative;
+}
+
+/* Seções do footer */
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre itens do grupo */
+}
+
+.footer-section.info {
+  flex: 1; /* Ocupa espaço proporcional */
+  display: flex;
+  align-items: center;
+  min-width: 200px; /* Define uma largura mínima */
+}
+
+.footer-section.controls {
+  flex: 2; /* Ocupa mais espaço para os controles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 500px; /* Limita a largura máxima */
+}
+
+.footer-section.volume {
+  flex: 1; /* Ajusta o espaço proporcionalmente */
+  display: flex;
+  justify-content: flex-end; /* Alinha à direita */
+  min-width: 150px; /* Define uma largura mínima */
+}
+
+/* Slider responsivo */
+footer .MuiSlider-root {
+  width: 100%;
+  max-width: 300px; /* Limita a largura */
+}
+
+/* Imagem e texto na seção de informações */
+.footer-section.info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.footer-section.info .title {
+  font-weight: bold;
+}
+
+.footer-section.info .subtitle {
+  font-size: 0.8rem;
+  color: #bbbbbb;
+}
+
+/* Botões de controle */
+.footer-section.controls .buttons {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões */
+}
+
+.footer-section.controls .buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.footer-section.controls .progress-bar input[type="range"] {
+  width: 100%; /* O slider ocupa todo o espaço disponível */
+  max-width: 300px;
+}
+
+.footer-section.volume input[type="range"] {
+  width: 100px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  footer {
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center;
+  }
+
+  .footer-section {
+    width: 100%; /* Cada seção ocupa toda a largura */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-section.controls {
+    max-width: 100%; /* Controle ocupa o espaço total */
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 15px;
+  }
+
+  .footer-section {
+    width: 100%; /* Cada seção ocupa toda a largura */
+  }
+}
